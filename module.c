@@ -12,7 +12,8 @@
 static int handler_pre_send_signal(struct kprobe *p, struct pt_regs *regs){
 	int sig = regs->regs[0];
 	struct task_struct *t = (struct task_struct *)regs->regs[2];
-	pr_info("send_signal: sig=%d from_pid=%d to_pid=%d ", sig, current->pid, t->pid);
+	pr_info("send_signal: sig=%d from_pid=%d from_uid=%d to_pid=%d to_uid=%d", 
+		sig, current->pid, current->cred->uid, t->pid, t->cred->uid);
 	return 0;
 }
 
