@@ -17,7 +17,7 @@ dump_kernel_stack  match_from_uid  match_sig  match_target_uid
 
 ## Stop stacktrace / 关闭调用栈打印
 
-`echo Y > /sys/module/SignalTracer/parameters/dump_kernel_stack`
+`echo N > /sys/module/SignalTracer/parameters/dump_kernel_stack`
 
 ## Stacktrace config / 调用栈打印配置
 
