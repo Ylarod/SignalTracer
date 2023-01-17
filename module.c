@@ -53,19 +53,19 @@ static struct kprobe kp_send_signal = {
 };
 
 
-int root_guard_init(void){
+int signal_tracer_init(void){
 	pr_info("SignalTracer init");
 	int ret = register_kprobe(&kp_send_signal);
 	return ret;
 }
 
-void root_guard_exit(void){
+void signal_tracer_exit(void){
 	pr_info("SignalTracer exit");
 	unregister_kprobe(&kp_send_signal);
 }
 
-module_init(root_guard_init);
-module_exit(root_guard_exit);
+module_init(signal_tracer_init);
+module_exit(signal_tracer_exit);
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Ylarod");
 MODULE_DESCRIPTION("A kernel module for tracing signal");

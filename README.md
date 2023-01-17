@@ -2,6 +2,8 @@
 
 一个追踪信号的内核模块，支持内核5.10+
 
+A kernel module for tracing signal, support kernel 5.10+
+
 ## Usage / 使用方法
 
 ```
